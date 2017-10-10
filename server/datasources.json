@@ -1,0 +1,19 @@
+{
+  "mongoDS": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "url": "",
+    "database": "schoolDB",
+    "password": "",
+    "name": "mongoDS",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "filestore-mongo": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "schoolDB",
+    "provider": "filestore-mongo",
+    "connector": "loopback-component-storage-mongo"
+  }
+}

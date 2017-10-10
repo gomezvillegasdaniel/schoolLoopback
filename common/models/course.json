@@ -1,0 +1,49 @@
+{
+  "name": "course",
+  "plural": "courses",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "instructor": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "course_ratings": {
+      "type": "hasMany",
+      "model": "course_rating",
+      "foreignKey": "id"
+    },
+    "instructors": {
+      "type": "belongsTo",
+      "model": "instructor",
+      "foreignKey": ""
+    },
+    "registrations": {
+      "type": "hasMany",
+      "model": "registration",
+      "foreignKey": "course"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

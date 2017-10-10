@@ -1,0 +1,31 @@
+{
+  "name": "student",
+  "plural": "students",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "major": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "registrations": {
+      "type": "hasMany",
+      "model": "registration",
+      "foreignKey": "student"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}
